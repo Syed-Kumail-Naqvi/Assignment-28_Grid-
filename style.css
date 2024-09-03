@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.flex{
+    display: flex;
+}
+a{
+    color: white;
+}
+.container{
+
+    display: grid;
+    grid-template-areas: "hea hea hea hea hea"
+                          "nav  main main main side"
+                          "nav  main main main side"
+                          "nav  main main main add"
+                          "nav  main main main add"
+                          "foot foot foot foot foot";    
+    gap: 10px;
+    height: 100vh;
+}
+.item{
+    background-color: goldenrod;
+    background: rgb(22, 22, 22);
+    border-radius: 2px;
+    padding: 30px;
+}
+#item-1{
+    grid-area: hea;
+}
+#item-2{
+    grid-area: nav;
+    flex-direction: column;
+    gap: 30px;
+}
+#item-3{
+    grid-area: main;
+}
+#item-3 p{
+    padding-top: 30px ;
+    line-height: 2rem;
+}
+#item-4{
+    grid-area: side;
+}
+#item-5{
+    grid-area: add;
+}
+#item-6{
+    grid-area: foot;
+}
+@media (max-width:768px) and (min-width:425px) {
+    .container{
+        grid-template-areas: "hea hea hea"
+                              "nav nav nav"
+                              "side main main"
+                              "side main main"
+                              "add foot foot";                         
+    }
+    .item{
+        background-color: rgb(37, 40, 236);   
+    }
+    #item-2{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media (max-width:425px) {
+    .container{
+        grid-template-areas: "hea"
+                              "nav"
+                              "main"
+                              "side"
+                              "add"
+                              "foot";
+    }
+    .item{
+        background-color: rgb(194, 0, 0);
+        color: white;        
+    }
+    #item-2{
+        flex-direction: column;        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
